@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 对象型属性赋值 -->
+
+    <!-- 引入外部bean
+            1.创建两个类对象
+            2.在emp的bean标签里面用property引入dept的bean
+    -->
+    <!--<bean id="dept" class="com.SpringforNew.bitest.Dept">
+        <property name="dname" value="HR部门"></property>
+    </bean>
+    <bean id="emp" class="com.SpringforNew.bitest.Emp">
+            &lt;!&ndash; 注入对象属性 &ndash;&gt;
+        <property name="dept" ref="dept"></property>
+            &lt;!&ndash; 普通属性注入 &ndash;&gt;
+        <property name="ename" value="YTY"></property>
+        <property name="age" value="20"></property>
+    </bean>-->
+
+    <!-- 内部bean -->
+    <!--<bean id="emp" class="com.SpringforNew.bitest.Emp">
+        &lt;!&ndash; 普通属性注入 &ndash;&gt;
+        <property name="ename" value="YTY"></property>
+        <property name="age" value="20"></property>
+        &lt;!&ndash; 内部bean &ndash;&gt;
+        <property name="dept">
+            <bean id="deptInner" class="com.SpringforNew.bitest.Dept">
+                <property name="dname" value="安保部门"></property>
+            </bean>
+        </property>
+    </bean>-->
+
+    <!-- 级联赋值 -->
+    <bean id="deptTmp" class="com.SpringforNew.bitest.Dept"></bean>
+    <bean id="emp" class="com.SpringforNew.bitest.Emp">
+        <!-- 普通属性注入 -->
+        <property name="ename" value="YTY"></property>
+        <property name="age" value="20"></property>
+        <!-- 级联赋值 -->
+        <property name="dept" ref="deptTmp"></property>
+        <property name="dept.dname" value="财务部"></property>
+    </bean>
+
+
+
+</beans>
