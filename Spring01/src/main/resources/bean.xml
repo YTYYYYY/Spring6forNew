@@ -2,5 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+    <!--完成User对象的创建
+            bean标签
+                id属性：唯一标识
+                class属性：要创建对象所在类的全路径
+    -->
+    <bean id="user" class="com.SpringforNew.User"></bean>
 </beans>

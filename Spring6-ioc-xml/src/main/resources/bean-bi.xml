@@ -3,4 +3,15 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="book" class="com.SpringforNew.bi.Book">
+        <property name="name" value="Java"></property>
+        <property name="author" value="YTY"></property>
+    </bean>
+
+    <bean id="bookAn" class="com.SpringforNew.bi.Book">
+        <constructor-arg name="name" value="C++"></constructor-arg>
+        <constructor-arg name="author" value="YTY"></constructor-arg>
+    </bean>
+
+
 </beans>

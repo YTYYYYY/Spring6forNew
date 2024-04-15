@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="stu" class="com.SpringforNew.bimap.Student"
+    p:sid="007" p:sname="YYY" p:courseList-ref="coulist" p:teacherMap-ref="teamap">
+    </bean>
+
+
+    <!-- 使用 util:类型 定义 -->
+    <!-- 在bean引入 util:类型 定义bean，完成list，map类的注入 -->
+    <bean id="course1" class="com.SpringforNew.bimap.Course">
+        <property name="cno" value="Java"></property>
+    </bean>
+    <bean id="course2" class="com.SpringforNew.bimap.Course">
+        <property name="cno" value="C++"></property>
+    </bean>
+    <bean id="teacher1" class="com.SpringforNew.bimap.Teacher">
+        <property name="tid" value="1"></property>
+        <property name="tname" value="张三"></property>
+    </bean>
+    <bean id="teacher2" class="com.SpringforNew.bimap.Teacher">
+        <property name="tid" value="2"></property>
+        <property name="tname" value="李四"></property>
+    </bean>
+
+    <util:list id="coulist">
+        <ref bean="course1"></ref>
+        <ref bean="course2"></ref>
+    </util:list>
+    <util:map id="teamap">
+        <entry>
+            <key><value>老师1</value></key>
+            <ref bean="teacher1"></ref>
+        </entry>
+        <entry>
+            <key><value>老师2</value></key>
+            <ref bean="teacher2"></ref>
+        </entry>
+    </util:map>
+    <!--<bean id="stu" class="com.SpringforNew.bimap.Student">
+        <property name="sid" value="1"></property>
+        <property name="sname" value="YTY"></property>
+        <property name="teacherMap" ref="teamap"></property>
+        <property name="courseList" ref="coulist"></property>
+    </bean>-->
+</beans>

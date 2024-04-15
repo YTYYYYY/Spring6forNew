@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <context:component-scan base-package="com.SpringforNew.jdbc_tx"></context:component-scan>
+    <!-- 引入外部属性文件 -->
+    <context:property-placeholder location="classpath:jdbc_tx.properties"></context:property-placeholder>
+
+    <!--数据库信息注入-->
+    <bean id="druidDataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="url" value="${jdbc.url}"></property>
+        <property name="username" value="${jdbc.user}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+        <property name="driverClassName" value="${jdbc.driver}"></property>
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="druidDataSource"></property>
+    </bean>
+
+    <!--事务-->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="druidDataSource"></property>
+    </bean>
+    <!--
+        开启事务的注解驱动
+        通过注解@Transactional所标识的方法或标识的类中的所有方法，都会被事务管理器管理事务
+    -->
+    <!-- transaction-manager的默认属性是transactionManager
+         如果事务管理器的bean的id正好是这个可以忽略这个属性 -->
+    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
+</beans>

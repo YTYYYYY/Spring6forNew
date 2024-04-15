@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Spring01/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring01/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6-aop/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6-aop/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6-ioc-Reflection/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6-ioc-Reflection/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6-ioc-annotation/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6-ioc-annotation/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6-ioc-xml/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6-ioc-xml/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6-jdbc-tx/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6-jdbc-tx/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6-jdbc-xmltx/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6-jdbc-xmltx/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6-junit/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6-junit/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6-resources/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6-resources/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6-validation/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring6-validation/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>

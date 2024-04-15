@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="logAspect" class="com.SpringforNew.anno_aop.LogAspect"></bean>
+
+    <context:component-scan base-package="com.SpringforNew.anno_aop"></context:component-scan>
+    <aop:config>
+        <!--配置切面类-->
+        <aop:aspect ref="logAspect">
+            <aop:pointcut id="pointCut"
+                expression="execution(* com.SpringforNew.anno_aop.CalculatorImpl.*(..))"/>
+            <!---->
+            <aop:before method="beforeMethod" pointcut-ref="pointCut"></aop:before>
+            <aop:after-returning method="afterReturningMethod" pointcut-ref="pointCut"
+                returning="result"></aop:after-returning>
+            <aop:after-throwing method="afterThrowingMethod" pointcut-ref="pointCut"
+                throwing="ex"></aop:after-throwing>
+            <aop:after method="afterMethod" pointcut-ref="pointCut"></aop:after>
+            <aop:around method="aroundMethod" pointcut-ref="pointCut"></aop:around>
+        </aop:aspect>
+    </aop:config>
+</beans>
